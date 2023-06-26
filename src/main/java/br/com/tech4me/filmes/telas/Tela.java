@@ -2,9 +2,9 @@ package br.com.tech4me.filmes.telas;
 
 import java.util.Scanner;
 
-import org.springframework.data.repository.Repository;
+import br.com.tech4me.filmes.repositorios.FilmeRepositorio;
 
-public interface Tela<T, K> {
-    void executar(Scanner entrada, Repository<T, K> repositorio);
+public interface Tela {
+    void executar(Scanner entrada, FilmeRepositorio repositorio);
 }
 

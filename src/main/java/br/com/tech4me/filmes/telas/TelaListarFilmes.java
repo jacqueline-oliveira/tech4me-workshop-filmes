@@ -3,16 +3,13 @@ package br.com.tech4me.filmes.telas;
 import java.util.List;
 import java.util.Scanner;
 
-import org.springframework.data.repository.Repository;
-
 import br.com.tech4me.filmes.model.Filme;
 import br.com.tech4me.filmes.repositorios.FilmeRepositorio;
 
-public class TelaListarFilmes implements Tela<Filme, Integer> {
+public class TelaListarFilmes implements Tela {
     @Override
-    public void executar(Scanner entrada, Repository<Filme, Integer> repositorio) {
-        FilmeRepositorio repo = (FilmeRepositorio)repositorio;
-        List<Filme> filmes = repo.findByOrderByTituloAsc();
+    public void executar(Scanner entrada, FilmeRepositorio repositorio) {
+        List<Filme> filmes = repositorio.findByOrderByTituloAsc();
 
         if(filmes.isEmpty()) {
             System.out.println("\nNão há filmes cadastrados.");

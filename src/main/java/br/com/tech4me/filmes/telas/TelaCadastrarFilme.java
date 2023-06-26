@@ -4,15 +4,13 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-import org.springframework.data.repository.Repository;
-
 import br.com.tech4me.filmes.model.Filme;
 import br.com.tech4me.filmes.repositorios.FilmeRepositorio;
 
-public class TelaCadastrarFilme implements Tela<Filme, Integer> {
+public class TelaCadastrarFilme implements Tela {
 
     @Override
-    public void executar(Scanner entrada, Repository<Filme, Integer> repositorio) {
+    public void executar(Scanner entrada, FilmeRepositorio repositorio) {
         Filme f = new Filme();
 
         System.out.println("\n*****************");
